@@ -1,4 +1,4 @@
-# holman does dotfiles
+# <del>holman</del> cadwallion does dotfiles
 
 ## dotfiles
 
@@ -76,7 +76,7 @@ dependency, but if you make it happen, THEY'LL MAKE **YOU** HAPPEN.
 
 ## thanks
 
-I forked [Ryan Bates](http://github.com/ryanb)' excellent
+I forked [Zach Holman](http://github.com/holman)'s dotfiles who forked [Ryan Bates](http://github.com/ryanb)' excellent
 [dotfiles](http://github.com/ryanb/dotfiles) for a couple years before the
 weight of my changes and tweaks inspired me to finally roll my own. But Ryan's
 dotfiles were an easy way to get into bash customization, and then to jump ship
