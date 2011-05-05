@@ -3,11 +3,11 @@ autoload colors && colors
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
 git_branch() {
-  echo $(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+  echo $(/usr/local/git/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
 git_dirty() {
-  st=$(/usr/bin/git status 2>/dev/null | tail -n 1)
+  st=$(/usr/local/git/bin/git status 2>/dev/null | tail -n 1)
   if [[ $st == "" ]]
   then
     echo ""
@@ -22,13 +22,13 @@ git_dirty() {
 }
 
 git_prompt_info () {
- ref=$(/usr/bin/git symbolic-ref HEAD 2>/dev/null) || return
+ ref=$(/usr/local/git/bin/git symbolic-ref HEAD 2>/dev/null) || return
 # echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
  echo "${ref#refs/heads/}"
 }
 
 project_name () {
-  name=$(pwd | awk -F'Development/' '{print $2}' | awk -F/ '{print $1}')
+  name=$(pwd | awk -F'code/' '{print $2}' | awk -F/ '{print $1}')
   echo $name
 }
 
@@ -38,7 +38,7 @@ project_name_color () {
 }
 
 unpushed () {
-  /usr/bin/git cherry -v origin/$(git_branch) 2>/dev/null
+  /usr/local/git/bin/git cherry -v origin/$(git_branch) 2>/dev/null
 }
 
 need_push () {
@@ -53,7 +53,7 @@ need_push () {
 rvm_prompt(){
   if $(which rvm &> /dev/null)
   then
-	  echo "%{$fg_bold[yellow]%}$(rvm tools identifier)%{$reset_color%}"
+	  echo "%{$fg_bold[yellow]%}$(rvm tools identifier | sed -e s/ruby-//)%{$reset_color%}"
 	else
 	  echo ""
   fi
@@ -82,7 +82,7 @@ directory_name(){
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rvm_prompt) in $(directory_name) $(project_name_color)$(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(rvm_prompt) in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[grey]%}$(todo)%{$reset_color%}"
 }
