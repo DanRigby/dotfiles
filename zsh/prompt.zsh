@@ -27,6 +27,7 @@ git_prompt_info () {
  echo "${ref#refs/heads/}"
 }
 
+<<<<<<< HEAD
 project_name () {
   name=$(pwd | awk -F'code/' '{print $2}' | awk -F/ '{print $1}')
   echo $name
@@ -37,6 +38,8 @@ project_name_color () {
   echo "%{\e[0;35m%}${name}%{\e[0m%}"
 }
 
+=======
+>>>>>>> remove some older project references
 unpushed () {
   /usr/local/git/bin/git cherry -v origin/$(git_branch) 2>/dev/null
 }
