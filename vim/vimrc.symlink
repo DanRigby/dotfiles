@@ -1,3 +1,5 @@
+set t_Co=256
+colorscheme railscasts
 set noswapfile
 
 " ----------------------------------------------------------------------------
@@ -48,6 +50,9 @@ vnoremap <Down> gj
 vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
+
+map <Leader>w <Esc>:w<CR>
+
 
 " ----------------------------------------------------------------------------
 "  UI
