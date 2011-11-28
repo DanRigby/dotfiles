@@ -1,9 +1,19 @@
 have_header: checking for ruby.h... -------------------- yes
 
-"gcc -E -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin10.0 -I.  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE     -g -Os -pipe -fno-common -DENABLE_DTRACE  -fno-common  -pipe -fno-common    conftest.c -o conftest.i"
+"gcc -o conftest -I/home/cadwallion/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-linux -I/home/cadwallion/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/home/cadwallion/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I.     -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC conftest.c  -L. -L/home/cadwallion/.rvm/rubies/ruby-1.9.2-p180/lib -Wl,-R/home/cadwallion/.rvm/rubies/ruby-1.9.2-p180/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/cadwallion/.rvm/rubies/ruby-1.9.2-p180/lib -L/home/cadwallion/.rvm/rubies/ruby-1.9.2-p180/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
 checked program was:
 /* begin */
-1: #include <ruby.h>
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -E -I/home/cadwallion/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/x86_64-linux -I/home/cadwallion/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1/ruby/backward -I/home/cadwallion/.rvm/rubies/ruby-1.9.2-p180/include/ruby-1.9.1 -I.     -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wno-long-long  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby.h>
 /* end */
 
 --------------------
