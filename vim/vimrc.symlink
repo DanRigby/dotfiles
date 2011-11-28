@@ -52,6 +52,7 @@ inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
 map <Leader>w <Esc>:w<CR>
+map <Leader>f <Esc>:CommandTFlush<CR>
 
 
 " ----------------------------------------------------------------------------
