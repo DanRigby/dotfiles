@@ -18,6 +18,7 @@ set nosmarttab             " fuck tabs
 set formatoptions+=n       " support for numbered/bullet lists
 "set textwidth=80           " wrap at 80 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
+set hidden                 " be quiet about hiding buffers
 
 syntax on               " turn syntax highlighting on by default
 filetype on             " detect type of file
@@ -52,8 +53,18 @@ inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
 map <Leader>w <Esc>:w<CR>
+map <Leader>t <Esc>:CommandT<CR>
 map <Leader>f <Esc>:CommandTFlush<CR>
 
+nmap <Leader>1 1gt
+nmap <Leader>2 2gt
+nmap <Leader>3 3gt
+nmap <Leader>4 4gt
+nmap <Leader>5 5gt
+nmap <Leader>6 6gt
+nmap <Leader>7 7gt
+nmap <Leader>8 8gt
+nmap <Leader>9 9gt
 
 " ----------------------------------------------------------------------------
 "  UI
@@ -95,3 +106,18 @@ function! StripWhitespace ()
     exec ':%s/ \+$//gc'
 endfunction
 map ,s :call StripWhitespace ()<CR>
+
+
+" ---------------------------------------------------------------------------
+" Screen settings
+" ---------------------------------------------------------------------------
+
+let g:ScreenImpl = 'Tmux'
+let g:ScreenShellTmuxInitArgs = '-2'
+let g:ScreenShellInitialFocus = 'shell'
+let g:ScreenShellQuitOnVimExit = 0
+map <F5> :ScreenShellVertical<CR>
+command -nargs=? -complete=shellcmd W  :w | :call ScreenShellSend("load '".@%."';")
+map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
+map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
+map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
