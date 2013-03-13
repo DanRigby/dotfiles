@@ -14,11 +14,6 @@ then
   source ~/.localrc
 fi
 
-if [[ -a /usr/local/bin/virtualenvwrapper.sh ]]
-then
-  source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
