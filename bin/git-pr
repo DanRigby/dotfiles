@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+#
+# Extension of `git pull-request` so I can stop passing the -h flag
+
+current_branch = `git status -sb`.chomp.split.last
+entity = `git remote -v`.match(/origin\t.+github\.com[\/|:](.+)\/(.+)\.git.+\n/)[1]
+
+exec "hub pull-request -h #{entity}:#{current_branch}"
