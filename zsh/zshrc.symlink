@@ -14,6 +14,12 @@ then
   source ~/.localrc
 fi
 
+# Boxen mode, activate!
+if [[ -a /opt/boxen/env.sh ]]
+then
+  source /opt/boxen/env.sh
+fi
+
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit

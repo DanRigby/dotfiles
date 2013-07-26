@@ -53,8 +53,14 @@ inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
 map <Leader>w <Esc>:w<CR>
+
+
+" ----------------------------------------------------------------------------
+"  CommandT
+" ----------------------------------------------------------------------------
 map <Leader>t <Esc>:CommandT<CR>
 map <Leader>f <Esc>:CommandTFlush<CR>
+let g:CommandTCancelMap = ['<C-c>', '<Esc>']
 
 nmap <Leader>1 1gt
 nmap <Leader>2 2gt
@@ -102,10 +108,17 @@ set visualbell             " shut the fuck up
 "  Strip all trailing whitespace in file
 " ---------------------------------------------------------------------------
 
-function! StripWhitespace ()
-    exec ':%s/ \+$//gc'
+function StripTrailingWhitespace()
+  if !&binary && &filetype != 'diff'
+    normal mz
+    normal Hmy
+    %s/\s\+$//e
+    normal 'yz<CR>
+    normal `z
+  endif
 endfunction
-map ,s :call StripWhitespace ()<CR>
+
+map ,s :call StripTrailingWhitespace ()<CR>
 
 
 " ---------------------------------------------------------------------------
