@@ -1,0 +1,11 @@
+if [ -a $HOME/.localrc ]; then
+  source $HOME/.localrc
+fi
+
+export PATH="$HOME/.bin:$HOME/.rbenv/bin:$HOME/go/bin:$PATH"
+
+eval "$(hub alias -s)"
+eval "$(rbenv init -)"
+export PATH=/Users/cadwallion/github/awssume/bin:$PATH
+
+export PATH="$HOME/.cargo/bin:$PATH"
