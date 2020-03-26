@@ -6,6 +6,20 @@ export PATH="$HOME/.bin:$HOME/.rbenv/bin:$HOME/go/bin:$PATH"
 
 eval "$(hub alias -s)"
 eval "$(rbenv init -)"
-export PATH=/Users/cadwallion/github/awssume/bin:$PATH
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+alias cbuild='~/enterprise2/chroot-build.sh'
+alias creset='~/enterprise2/chroot-reset.sh'
+alias cstart='~/enterprise2/chroot-start.sh'
+alias cinfo='~/enterprise2/chroot-info.sh'
+alias cssh='~/enterprise2/chroot-ssh.sh'
+alias cip='~/enterprise2/chroot-ip.sh'
+alias cstop='~/enterprise2/chroot-stop.sh'
+alias ccinfo='~/enterprise2/chroot-cluster-info.sh'
+alias ccip='~/enterprise2/chroot-cluster-ip.sh'
+alias ccstart='~/enterprise2/chroot-cluster-start.sh'
+alias ccstop='~/enterprise2/chroot-cluster-stop.sh'
+alias ccssh='~/enterprise2/chroot-cluster-ssh.sh'
+alias gclean='sudo git clean -fdx'
+alias dclean='docker system prune --all'

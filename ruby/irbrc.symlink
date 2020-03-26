@@ -11,5 +11,5 @@ IRB.conf[:PROMPT_MODE] = :SIMPLE
 IRB.conf[:AUTO_INDENT] = true
 
 def me
-  User.find_by_login('cadwallion')
+  User.find_by_login('DanRigby')
 end
