@@ -4,7 +4,6 @@ fi
 
 export PATH="$HOME/.bin:$HOME/.rbenv/bin:$HOME/go/bin:$PATH"
 
-eval "$(hub alias -s)"
 eval "$(rbenv init -)"
 
 export PATH="$HOME/.cargo/bin:$PATH"
