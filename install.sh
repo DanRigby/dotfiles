@@ -39,6 +39,8 @@ git config --global alias.lg 'log --color --graph --pretty=format"%Cred%h%Creset
 git config --global alias.up '!git remote update -p; git merge --ff-only @{u}; git submodule update --init --recursive'
 
 # Configure fish shell
+fish -c 'set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths'
+fish -c 'set -U fish_user_paths /home/linuxbrew/.linuxbrew/bin/ $fish_user_paths'
 fish -c "abbr -a cbuild '/workspace/enterprise2/chroot-build.sh'"
 fish -c "abbr -a creset '/workspace/enterprise2/chroot-reset.sh'"
 fish -c "abbr -a cconfig '/workspace/enterprise2/chroot-configure.sh'"
