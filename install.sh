@@ -19,8 +19,8 @@ brew install hyperfine
 brew install diskus
 brew install exa
 brew install gh
-brew install rustup-init
 brew install jid
+brew install rustup-init
 rustup-init -y
 brew uninstall rustup-init
 
