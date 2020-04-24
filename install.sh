@@ -39,20 +39,18 @@ git config --global alias.lg 'log --color --graph --pretty=format"%Cred%h%Creset
 git config --global alias.up '!git remote update -p; git merge --ff-only @{u}; git submodule update --init --recursive'
 
 # Configure fish shell
-fish
-abbr -a cbuild '/workspace/enterprise2/chroot-build.sh'
-abbr -a creset '/workspace/enterprise2/chroot-reset.sh'
-abbr -a cconfig '/workspace/enterprise2/chroot-configure.sh'
-abbr -a cstart '/workspace/enterprise2/chroot-start.sh'
-abbr -a cinfo '/workspace/enterprise2/chroot-info.sh'
-abbr -a cssh '/workspace/enterprise2/chroot-ssh.sh'
-abbr -a cip '/workspace/enterprise2/chroot-ip.sh'
-abbr -a cstop '/workspace/enterprise2/chroot-stop.sh'
-abbr -a ccinfo '/workspace/enterprise2/chroot-cluster-info.sh'
-abbr -a ccip '/workspace/enterprise2/chroot-cluster-ip.sh'
-abbr -a ccstart '/workspace/enterprise2/chroot-cluster-start.sh'
-abbr -a ccstop '/workspace/enterprise2/chroot-cluster-stop.sh'
-abbr -a ccssh '/workspace/enterprise2/chroot-cluster-ssh.sh'
-abbr -a gclean 'sudo git clean -fdx'
-abbr -a dclean 'docker system prune --all'
-exit
+fish -c "abbr -a cbuild '/workspace/enterprise2/chroot-build.sh'"
+fish -c "abbr -a creset '/workspace/enterprise2/chroot-reset.sh'"
+fish -c "abbr -a cconfig '/workspace/enterprise2/chroot-configure.sh'"
+fish -c "abbr -a cstart '/workspace/enterprise2/chroot-start.sh'"
+fish -c "abbr -a cinfo '/workspace/enterprise2/chroot-info.sh'"
+fish -c "abbr -a cssh '/workspace/enterprise2/chroot-ssh.sh'"
+fish -c "abbr -a cip '/workspace/enterprise2/chroot-ip.sh'"
+fish -c "abbr -a cstop '/workspace/enterprise2/chroot-stop.sh'"
+fish -c "abbr -a ccinfo '/workspace/enterprise2/chroot-cluster-info.sh'"
+fish -c "abbr -a ccip '/workspace/enterprise2/chroot-cluster-ip.sh'"
+fish -c "abbr -a ccstart '/workspace/enterprise2/chroot-cluster-start.sh'"
+fish -c "abbr -a ccstop '/workspace/enterprise2/chroot-cluster-stop.sh'"
+fish -c "abbr -a ccssh '/workspace/enterprise2/chroot-cluster-ssh.sh'"
+fish -c "abbr -a gclean 'sudo git clean -fdx'"
+fish -c "abbr -a dclean 'docker system prune --all'"
