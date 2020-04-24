@@ -20,6 +20,7 @@ brew install diskus
 brew install exa
 brew install gh
 brew install rustup-init
+brew install jid
 rustup-init -y
 brew uninstall rustup-init
 
