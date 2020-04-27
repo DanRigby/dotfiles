@@ -20,6 +20,7 @@ brew install diskus
 brew install exa
 brew install gh
 brew install jid
+brew install git-delta
 brew install rustup-init
 rustup-init -y
 brew uninstall rustup-init
@@ -27,6 +28,9 @@ brew uninstall rustup-init
 # Configure git
 git config --global user.name 'Dan Rigby'
 git config --global user.email 'danrigby@github.com'
+git config --global help.autocorrect '30'
+git config --global core.pager 'delta --dark --plus-color="#012800" --minus-color="#340001" --theme="Monokai Extended"'
+git config --global interactive.diffFilter 'delta --color-only'
 git config --global alias.co 'checkout'
 git config --global alias.br 'branch'
 git config --global alias.ci 'commit'
@@ -39,7 +43,6 @@ git config --global alias.discard 'checkout --'
 git config --global alias.uncommit 'reset --mixed HEAD~'
 git config --global alias.remotes 'remote -v'
 git config --global alias.agc 'gc --aggressive --prune=all'
-git config --global help.autocorrect '30'
 git config --global alias.lg 'log --color --graph --pretty=format"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 git config --global alias.up '!git remote update -p; git merge --ff-only @{u}; git submodule update --init --recursive'
 
