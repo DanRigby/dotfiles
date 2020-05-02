@@ -12,15 +12,19 @@ echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> /workspace/.bash_
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Install tools
-brew install fish
 brew install bat
-brew install fd
-brew install hyperfine
 brew install diskus
 brew install exa
+brew install fd
+brew install fish
+brew install fortune
 brew install gh
-brew install jid
 brew install git-delta
+brew install hyperfine
+brew install jid
+go get github.com/arsham/rainbow
+
+# Install rust
 brew install rustup-init
 rustup-init -y
 brew uninstall rustup-init
@@ -48,7 +52,12 @@ git config --global alias.up '!git remote update -p; git merge --ff-only @{u}; g
 
 # Configure fish shell
 fish -c 'set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths'
+fish -c 'set -U fish_user_paths $HOME/go/bin $fish_user_paths'
 fish -c 'set -U fish_user_paths /home/linuxbrew/.linuxbrew/bin/ $fish_user_paths'
+fish -c 'function fish_greeting
+    fortune | rainbow
+end
+funcsave fish_greeting'
 fish -c "abbr -a cbuild '/workspace/enterprise2/chroot-build.sh'"
 fish -c "abbr -a creset '/workspace/enterprise2/chroot-reset.sh'"
 fish -c "abbr -a cconfig '/workspace/enterprise2/chroot-configure.sh'"
