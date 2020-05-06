@@ -35,6 +35,7 @@ git config --global user.email 'danrigby@github.com'
 git config --global help.autocorrect '30'
 git config --global core.pager 'delta --dark --plus-color="#012800" --minus-color="#340001" --theme="Monokai Extended"'
 git config --global interactive.diffFilter 'delta --color-only'
+git config --global push.default current
 git config --global alias.co 'checkout'
 git config --global alias.br 'branch'
 git config --global alias.ci 'commit'
