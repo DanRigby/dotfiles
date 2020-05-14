@@ -48,7 +48,7 @@ git config --global alias.discard 'checkout --'
 git config --global alias.uncommit 'reset --mixed HEAD~'
 git config --global alias.remotes 'remote -v'
 git config --global alias.agc 'gc --aggressive --prune=all'
-git config --global alias.lg 'log --color --graph --pretty=format"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+git config --global alias.lg 'log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 git config --global alias.up '!git remote update -p; git merge --ff-only @{u}; git submodule update --init --recursive'
 
 # Configure fish shell
