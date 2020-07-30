@@ -74,7 +74,3 @@ fish -c "abbr -a ccstop '/workspace/enterprise2/chroot-cluster-stop.sh'"
 fish -c "abbr -a ccssh '/workspace/enterprise2/chroot-cluster-ssh.sh'"
 fish -c "abbr -a gclean 'sudo git clean -fdx'"
 fish -c "abbr -a dclean 'docker system prune --all'"
-
-# Adjust system configuration
-echo 'fs.inotify.max_user_watches=524288' >> /etc/sysctl.conf
-sysctl -p
