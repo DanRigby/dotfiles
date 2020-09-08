@@ -22,6 +22,7 @@ brew install gh
 brew install git-delta
 brew install hyperfine
 brew install jid
+brew install ripgrep
 go get github.com/arsham/rainbow
 
 # Install rust
