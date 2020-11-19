@@ -13,7 +13,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Install tools
 brew install bat
-brew install diskus
 brew install exa
 brew install fd
 brew install fish
@@ -22,6 +21,7 @@ brew install gh
 brew install git-delta
 brew install hyperfine
 brew install jid
+brew install ox
 brew install ripgrep
 go get github.com/arsham/rainbow
 
