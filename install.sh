@@ -13,6 +13,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Install tools
 brew install bat
+brew install diskus
 brew install exa
 brew install fd
 brew install fish
