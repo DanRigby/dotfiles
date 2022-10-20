@@ -25,7 +25,6 @@ brew install k9s
 brew install kubernetes-cli
 brew install lazydocker
 brew install lazygit
-brew install lsd
 brew install moreutils
 brew install mosh
 brew install octant
