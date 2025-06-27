@@ -17,11 +17,11 @@ then
   elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
   then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-  fi
 
-  echo >> /home/vscode/.bashrc
-  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/vscode/.bashrc
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    echo >> /home/vscode/.bashrc
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/vscode/.bashrc
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi
 
 fi
 
