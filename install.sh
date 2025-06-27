@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Git Settings
+git config --global init.defaultBranch main
+git config --global push.default simple
+git config --global push.autoSetupRemote true
+
 # Install Homebrew if needed
 if test ! $(which brew)
 then
